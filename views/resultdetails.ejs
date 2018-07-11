@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Transactions Details</title>
+	<link rel="stylesheet" href="/views/public/css/flatly.min.css">
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand text-default" href="/">iBANK</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <form class="form-inline my-2 my-lg-0" method="GET" action="/logout">
+      <button class="btn btn-danger my-2 my-sm-0" type="submit">Logout</button>
+    </form>
+  </div>
+</nav>
+	
+	<div class="jumbotron text-center text-danger" >
+  <h3 class="display-5">NIP MESSAGE IN DETAIL</h3>
+  <p class="lead text-primary">Failed Message Details</p>
+</div>
+
+<div class="container">
+  	<form method="get" action="#">
+      <div class="form-group">
+      <label>Originator Account Number</label>
+      <input type="text" class="form-control" value="<%=msg[0].ORIGINATOR %>" readonly>
+    </div>
+    <div class="form-group">
+      <label>Beneficiary Account Number</label>
+      <input type="text" class="form-control" value="<%=msg[0].BENEFICIARY %>" readonly>
+    </div>
+    <div class="form-group">
+      <label>Session ID</label>
+      <input type="text" class="form-control" value="<%=msg[0].SID %>" readonly>
+    </div>
+    <div class="form-group">
+      <label>Capture Date</label>
+      <input type="text" class="form-control" value="<%=msg[0].RDATE %>" readonly>
+    </div>
+    <div class="form-group">
+      <label>Message</label>
+      <textarea class="form-control" rows="10" readonly>
+        <%=msg[0].MSG %>
+      </textarea>
+    </div>
+  </form>
+
+  <br>
+
+  <div style="width: 70%; text-align: center;">
+    <button class="btn btn-info">ReQuery</button>
+    <button class="btn btn-danger" style="float: right;">ReFund</button>
+  </div>
+	
+  <br><br><hr>
+  <br>
+</div>
+
+
+</body>
+</html>
+

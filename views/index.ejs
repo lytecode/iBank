@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+	<link rel="stylesheet" href="./views/public/css/flatly.min.css">
+</head>
+<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand text-default" href="/">iBANK</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <form class="form-inline my-2 my-lg-0" method="GET" action="/logout">
+      <button class="btn btn-danger my-2 my-sm-0" type="submit">Logout</button>
+    </form>
+  </div>
+</nav>
+
+	<div class="jumbotron text-center text-danger" >
+  <h3 class="display-4">QUERY NIP FAILED MESSAGES</h3>
+  <p class="lead text-primary">These are failed transactions from NIBBS which are stored in nip_failed_messages table in softdev.</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 center-div" style="margin: 0 auto; width: 80%">
+      <form method="GET" action="/trans">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label>Originator Account Number</label>
+            <input type="text" class="form-control" name="orignator" placeholder="Originator Account Number">
+          </div>
+          <div class="form-group col-md-6">
+            <label>Beneficiary Account Number</label>
+            <input type="text" class="form-control" name="beneficiary" placeholder="Beneficiary Account Number">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6 glyphicon glyphicon-calend">
+            <label>Start Date</label>
+            <input type="date" name="start_date" class="form-control ">
+          </div>
+
+          <div class="form-group col-md-6">
+            <label>End date</label>
+            <input type="date" name="end_date" class="form-control">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+  </div>
+<div>
+    <hr>
+    <footer>
+        <% include ../views/partials/footer %>
+    </footer>
+
+</body>
+</html>
